@@ -18,3 +18,10 @@ Everything in this database is randomly generated. No row describes a real perso
 | incidents | One reported incident | 200 | incident_id, report_date, offense_type, severity, district, location_type, weapon_involved (1 = yes, 0 = no), status, officer_id |
 | arrests | One person arrested for one incident | 103 | arrest_id, incident_id, offender_id, arrest_date, charge, disposition |
 | officers | one officer | 15 | officer_id, last_name, rank, district |
+
+The tables connect through ID columns: arrests.incident_id points to incidents, arrests.offender_id points to offenders, and incidents.officer_id points to officers. The arrests table is the bridge between people and incidents, which matters in Lesson 5.
+
+### :exclamation: Five ground rules
+1. End each query with a semicolon. SQL Server does not always require it, but it is good practice and it needed before a ```WITH``` clause.
+2. 2. Text values go in single quotes: ```Burglary```. Numbers do not ```1```.
+   3. 
