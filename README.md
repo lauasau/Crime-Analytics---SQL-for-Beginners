@@ -28,3 +28,10 @@ The tables connect through ID columns: arrests.incident_id points to incidents, 
    3. Keywords are not case sensitive, but writing them in capitals makes queries easier to read.
    4. ```--``` starts a comment that SQL ignores.
    5. Clauses always appear in this order: ```SELECT``` (with ```TOP``` if you want to limit rows), ```FROM```, ```WHERE```, ```GROUP BY```, ```HAVING```, ORDER BY```.
+
+# :notebook: Lesson 1:SELECT and FROM - Looking at the data
+Every query starts with two questions: which columns do you want (```SELECT```), and from which table (```FROM```)?
+```SQL
+SELECT TOP 5 first_name, last_name, risk_level
+FROM offenders;
+```
