@@ -22,6 +22,7 @@ Everything in this database is randomly generated. No row describes a real perso
 The tables connect through ID columns: arrests.incident_id points to incidents, arrests.offender_id points to offenders, and incidents.officer_id points to officers. The arrests table is the bridge between people and incidents, which matters in Lesson 5.
 
 ### :exclamation: Five ground rules
-1. End each query with a semicolon. SQL Server does not always require it, but it is good practice and it needed before a ```WITH``` clause.
-2. 2. Text values go in single quotes: ```Burglary```. Numbers do not ```1```.
+
+   1. End each query with a semicolon. SQL Server does not always require it, but it is good practice and it needed before a ```WITH``` clause.
+   2. Text values go in single quotes: ```Burglary```. Numbers do not ```1```.
    3. 
