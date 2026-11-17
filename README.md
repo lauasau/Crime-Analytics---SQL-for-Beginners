@@ -36,3 +36,11 @@ Every query starts with two questions: which columns do you want (```SELECT```),
 SELECT TOP 5 first_name, last_name, risk_level
 FROM offenders;
 ```
+
+| first_name | last_name | risk_level |
+| --- | --- | --- |
+| Kevin | Ibarra | Medium |
+| Lena | Turner | Low |
+| Carlos | Reyes | NULL |
+| Brianna | Vega | High |
+| Omar | Underwood | Medium |
