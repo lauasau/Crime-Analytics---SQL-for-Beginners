@@ -57,7 +57,7 @@ The star returns every column. It is handy for a first look at a table, but in r
 
 ## Rename columns with ```AS```
 An alias gives a column a cleaner name in your results, which matters when the output goes into a report or dashboard. Giving columns an alias is also done for organizational purposes.
-````SQL
+```SQL
 SELECT TOP 3 first_name AS [First Name],
    prior_convictions AS priors
 FROM offenders;
@@ -65,3 +65,23 @@ FROM offenders;
 
 ## Remove repeats with ```DISTINT```
 ```DISTINCT``` returns each value once. Use it to see what categories a column holds.
+```SQL
+SELECT DISTINCT district
+FROM incidents;
+```
+
+| district |
+| --- |
+| South |
+| Central |
+| East |
+| West |
+| North |
+
+To count the categories instead of listing them, wrap the column: 
+```sql
+SELECT COUNT(DISTINCT offense_type)
+FROM incidents;
+```
+This returns a count of 10.
+
