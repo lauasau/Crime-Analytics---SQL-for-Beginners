@@ -89,8 +89,26 @@ This returns a count of 10.
 1. Show ```offense_type```, ```report_date```, and ```district``` for the first 10 incidents.
 2. Lis every distinct ```location_type``` in incidents.
 3. Show all columns for the first 3 officers.
+4. 
 Answers are in the answer key.
 
 # :notebook: Lesson 2:
 # ```WHERE``` - filtering to the rows you need
 ```WHERE``` keeps only the rows that meet a condition, which is how you narrow 200 incidents down to the ones you care about.
+```sql
+SELECT TOP 5 incident_id, report_date, district
+FROM incidents
+WHERE offense_type = 'Burglary'
+ORDER BY incident_id;
+```
+| incident_id | report_date | district |
+| --- | --- | --- |
+| 13 | 2025-10-01 | West |
+| 17 | 2025-11-30 | North |
+| 39 | 2025-09-02 | North |
+| 55 | 2025-08-21 | East |
+| 81 | 2025-05-21 | North |
+
+Swap ```TOP 5``` and the column list for ```COUNT(*)``` and the same filter shows there are 18 burglaries in the data. Spelling and spaces must match; capitals usually do not matter in SQL Server's default setup.
+
+
