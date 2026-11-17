@@ -25,4 +25,6 @@ The tables connect through ID columns: arrests.incident_id points to incidents, 
 
    1. End each query with a semicolon. SQL Server does not always require it, but it is good practice and it needed before a ```WITH``` clause.
    2. Text values go in single quotes: ```Burglary```. Numbers do not ```1```.
-   3. 
+   3. Keywords are not case sensitive, but writing them in capitals makes queries easier to read.
+   4. ```--``` starts a comment that SQL ignores.
+   5. Clauses always appear in this order: ```SELECT``` (with ```TOP``` if you want to limit rows), ```FROM```, ```WHERE```, ```GROUP BY```, ```HAVING```, ORDER BY```.
