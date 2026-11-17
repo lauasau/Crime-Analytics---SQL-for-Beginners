@@ -85,3 +85,12 @@ FROM incidents;
 ```
 This returns a count of 10.
 
+### Try it yourself!
+1. Show ```offense_type```, ```report_date```, and ```district``` for the first 10 incidents.
+2. Lis every distinct ```location_type``` in incidents.
+3. Show all columns for the first 3 officers.
+Answers are in the answer key.
+
+# :notebook: Lesson 2:
+# ```WHERE``` - filtering to the rows you need
+```WHERE``` keeps only the rows that meet a condition, which is how you narrow 200 incidents down to the ones you care about.
