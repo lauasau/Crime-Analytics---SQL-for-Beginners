@@ -30,7 +30,7 @@ The tables connect through ID columns: arrests.incident_id points to incidents, 
    5. Clauses always appear in this order: ```SELECT``` (with ```TOP``` if you want to limit rows), ```FROM```, ```WHERE```, ```GROUP BY```, ```HAVING```, ORDER BY```.
 
 # :notebook: Lesson 1: 
-# SELECT and FROM - Looking at the data
+# ```SELECT``` and ```FROM``` - Looking at the data
 Every query starts with two questions: which columns do you want (```SELECT```), and from which table (```FROM```)?
 ```SQL
 SELECT TOP 5 first_name, last_name, risk_level
@@ -47,7 +47,7 @@ FROM offenders;
 
 ```TOP 5``` stops the output at five rows, a good habit when exploring a table with thousand of records. Without an ```ORDER BY``` (Lesson 3), SQL Server does not promise which five rows come back, so yours may differ from the table. ```NULL``` means the value is missing (here, no risk level was assigned). NULL is not the same as zero or an empty word, and Lesson 2 shows how to handle it.
 
-## Select everything with *
+## Select everything with ```*```
 ```SQL
 SELECT TOP 5 *
 FROM uncidents;
@@ -56,3 +56,10 @@ FROM uncidents;
 The star returns every column. It is handy for a first look at a table, but in real work name the columns you need.
 
 ## Rename columns with ```AS```
+An alias gives a column a cleaner name in your results, which matters when the output goes into a report or dashboard. Giving columns an alias is also done for organizational purposes.
+````SQL
+SELECT TOP 3 first_name AS [First Name],
+   prior_convictions AS priors
+FROM offenders;
+```
+
