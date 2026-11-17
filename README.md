@@ -63,3 +63,5 @@ SELECT TOP 3 first_name AS [First Name],
 FROM offenders;
 ```
 
+## Remove repeats with ```DISTINT```
+```DISTINCT``` returns each value once. Use it to see what categories a column holds.
