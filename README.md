@@ -89,7 +89,7 @@ This returns a count of 10.
 1. Show ```offense_type```, ```report_date```, and ```district``` for the first 10 incidents.
 2. Lis every distinct ```location_type``` in incidents.
 3. Show all columns for the first 3 officers.
-4. 
+
 Answers are in the answer key.
 
 # :notebook: Lesson 2:
