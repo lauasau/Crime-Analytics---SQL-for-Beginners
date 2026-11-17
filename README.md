@@ -44,3 +44,15 @@ FROM offenders;
 | Carlos | Reyes | NULL |
 | Brianna | Vega | High |
 | Omar | Underwood | Medium |
+
+```TOP 5``` stops the output at five rows, a good habit when exploring a table with thousand of records. Without an ```ORDER BY``` (Lesson 3), SQL Server does not promise which five rows come back, so yours may differ from the table. ```NULL``` means the value is missing (here, no risk level was assigned). NULL is not the same as zero or an empty word, and Lesson 2 shows how to handle it.
+
+## Select everything with *
+```SQL
+SELECT TOP 5 *
+FROM uncidents;
+```
+
+The star returns every column. It is handy for a first look at a table, but in real work name the columns you need.
+
+## Rename columns with ```AS```
