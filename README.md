@@ -178,3 +178,21 @@ ORDER BY prior_convictions DESC, last_name ASC;
 - ```DESC``` sorts high to low; ```ASC``` (the default) sorts low to high.
 - Add a second column after a comma to break ties. Three offenders tie at 7 priors, so ```last_name``` puts them in alphabetical order.
 - Sorting dates newest first (```ORDER BY report_date DESC```) is the quickest way to see the latest incidents. 
+
+In SQL Server, ```TOP``` 5 goes right after ```SELECT```. PostgreSQL, MySQL and SQLite put LIMIT 5 at the end of the query instead; the idea is identical.
+
+### Try it yourself!
+   1.  Show the 10 most recent incidents with their ```offense_type``` and ```district```.
+   2. List offenders from oldest to youngest by birth_date, showing name and birth date, 5 rows.
+   3. Show the 5 earliest arrests by ```arrest_date```, with  ```charge``` and ```disposition```.
+
+# :abacus: Lesson 4:
+# ```COUNT```, ```GROUP BY``` and ```HAVING``` - Summarizing crime
+Most crime-analysis questions are counts and rates ("how many, where, when?"), and aggregate functions answer them by collapsing many rows into one number.
+| Function | Returns| 
+| --- | --- |
+| ```COUNT(*) | Number of rows |
+| ```COUNT(column) | Total of non-NULL values in the column |
+| ```SUM(column) | Total |
+| ```AVG(column) | Average |
+| ```MIN(column), MAX(column) | Smallest and largest value |
