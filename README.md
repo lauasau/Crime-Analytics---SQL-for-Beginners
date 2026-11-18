@@ -112,7 +112,7 @@ ORDER BY incident_id;
 
 Swap ```TOP 5``` and the column list for ```COUNT(*)``` and the same filter shows there are 18 burglaries in the data. Spelling and spaces must match; capitals usually do not matter in SQL Server's default setup.
 
-## Combine conditions with AND, OR and parentheses
+## Combine conditions with ```AND```, ```OR``` and parentheses
 ```AND``` requires all conditions to be true for a record to be included. ```OR``` requires at least one condition to be true.
 ```SQL
 SELECT incident_id, report_date, offense_type
@@ -144,7 +144,7 @@ is a different question from the same line without the parentheses.
 | ```!=``` or ```<>``` | Not equal | ```WHERE status != 'Open'``` | |
 
 The ```BETWEEN``` example is the summer 2025 incidents. In the practice database ```report_date``` is a ```DATE``` column; write date values as ```'YYYY-MM-DD'``` and SQL Server reads them correctly.
-## Missing Values: IS NULL
+## Missing Values: ```IS NULL```
 ```IS NULL``` and ```IS NOT NULL``` are operators used to test whether a column or expression contains a missing or unknown value.
 ```SQL
 SELECT offender_id, last_name, supervision_type
@@ -191,8 +191,24 @@ In SQL Server, ```TOP``` 5 goes right after ```SELECT```. PostgreSQL, MySQL and 
 Most crime-analysis questions are counts and rates ("how many, where, when?"), and aggregate functions answer them by collapsing many rows into one number.
 | Function | Returns| 
 | --- | --- |
-| ```COUNT(*) | Number of rows |
-| ```COUNT(column) | Total of non-NULL values in the column |
-| ```SUM(column) | Total |
-| ```AVG(column) | Average |
-| ```MIN(column), MAX(column) | Smallest and largest value |
+| ```COUNT(*)``` | Number of rows |
+| ```COUNT(column)``` | Total of non-NULL values in the column |
+| ```SUM(column)``` | Total |
+| ```AVG(column)``` | Average |
+| ```MIN(column)```, ```MAX(column)``` | Smallest and largest value |
+
+```SQL
+SELECT COUNT(*) AS total_incidents
+FROM incidents;
+```
+The result is one row: ```200```.
+
+## ```GROUP BY```: One result per category
+```GROUP BY```` splits the rows into groups and runs the aggregate on each group. This is the "incidents by offense type" table every analyst builds.
+```SQL
+SELECT offense_type, COUNT(*) AS incident_count
+FROM incidents
+GROUP BY offense_type
+ORDER BY incident_count DESC;
+```
+
