@@ -1,16 +1,16 @@
-# :computer: SQL for Beginners
+# :computer: SQL for Beginners - Crime Analytics
 ## :globe_with_meridians: Set up your practice database
 SQL (Structured Query Language) is how crime analysts ask questions about a database and this guide teaches users how to use SQL to analyze a fictional offender and incident-report data. 
 This guide includes six mini lessons, then practice problems with an answer key. Every query below was run against the fictional database and the results shown are the real output.
 
-### :file_folder: What you need
+## :file_folder: What you need
 - A free tool that connects to SQL Server, such as SQL Server Management Studio (SSMS) or Azure Data Studio, also a SQL Server instance you can write to.
 - The practice script ```cj_practice_sqlserver.sql```. Open the file in a query window and run it once. Doing so will create a database called ```cj_practice``` and builds and fills all four tables.
 - After that, open a new query window. Make sure that ```cj_practice``` is the selected database (or start with USE ```cj_practice;```), paste a query and press execute (F5).
 
 This guide uses SQL Server's dialect, T-SQL. PostgreSQL, MySQL and SQLite read almost the same. The differences are small and flagged where they matter (mainly limiting rows with ```TOP``` versus ```LIMIT```, and date functions). 
 
-### :open_file_folder: The Data
+## :open_file_folder: The Data
 Everything in this database is randomly generated. No row describes a real person, case or agency.
 
 | Table | One row is | Rows | Columns |
