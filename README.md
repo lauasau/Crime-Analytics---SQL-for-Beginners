@@ -144,3 +144,21 @@ is a different question from the same line without the parentheses.
 | ```!=``` or ```<>``` | Not equal | ```WHERE status != 'Open'``` | |
 
 The ```BETWEEN``` example is the summer 2025 incidents. In the practice database ```report_date``` is a ```DATE``` column; write date values as ```'YYYY-MM-DD'``` and SQL Server reads them correctly.
+## Missing Values: IS NULL
+```IS NULL``` and ```IS NOT NULL``` are operators used to test whether a column or expression contains a missing or unknown value.
+```SQL
+SELECT offender_id, last_name, supervision_type
+FROM offenders
+WHERE risk_level IS NULL;
+```
+This returns 8 offenders who were never assigned a risk level, such as Reyes (id 3, Parole) and Turner (id 16, no supervision). In real records, checking for NULLs before you count anything is basic data hygiene.
+### Try it yourself!
+1. Find all incidents with ```severity = 'Felony'``` in the ```East``` district.
+2. Find offenders on Parole with a ```risk_level``` of High.
+3. Count incidents whose ```location_type``` is Residence or Vehicle.
+4. List arrests where ```disposition``` is Dismissed or Pending.
+
+# :file_cabinet: Lesson 3:
+# ```ORDER BY``` and ```TOP``` - Ranking your results
+```ORDER BY``` sorts your query results and ```TOP``` limits the number of rows returned, which together answer, "who has the most?" or "what happened most recently?" Together, they let you retrieve the highest, lowest, or most recent records from a table. 
+
