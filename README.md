@@ -129,8 +129,17 @@ This returns 6 incidents; the first rows are:
 | 139 | 2025-10-11 | Weapons Violation |
 | 161 | 2025-08-18 | Larceny |
 
-When you mix ```AND``` with ```OR```, SQL evaluates ```AND``` beore ```OR```. Always use parentheses to explicitly group your conditions so the database executes your intended logic:
+When you mix ```AND``` with ```OR```, SQL evaluates ```AND``` before ```OR```. Always use parentheses to explicitly group your conditions so the database executes your intended logic:
 ```sql
 WHERE district = 'North' AND (offense_type = 'Robbery' OR offense_type = 'Burglary')
 ```
 is a different question from the same line without the parentheses.
+
+## Handy filter shortcuts
+| Tool | What it does | Example | Rows |
+| --- | --- | --- | --- |
+| ```IN``` | Matches any value in a list | ```WHERE offense_type IN ('Robbery', 'Aggravated Assault')``` | 23 |
+| ```BETWEEN``` | Matches a range, ends included | ```WHERE report_date BETWEEN '2025-06-01' AND '2025-08-31'``` | 51 |
+| ```LIKE`` | Matches a text pattern; ```%``` means any characters | ```WHERE offense_type LIKE '%Assault%``` | 36 |
+| ```!=``` or ```<>``` | Not equal | ```WHERE status != 'Open'``` | |
+
