@@ -211,4 +211,17 @@ FROM incidents
 GROUP BY offense_type
 ORDER BY incident_count DESC;
 ```
+| offense_type | incident_count |
+| --- | --- |
+| Larceny | 34 |
+| Vandalism | 28 |
+| Simple Assault | 25 |
+| Drug Possession | 25 |
+| Motor Vehicle Theft | 22 |
+| Burglary | 18 |
+| Domestic Violence | 16 |
+| Robbery | 12 |
+| Aggravated Assault | 11 |
+| Weapons Violation | 9 |
 
+The rule to remember: every column in ```SELECT``` must either be inside an aggregate function or appear in ```GROUP BY```. Change the grouping column to district and the same pattern gives West 48, Central 45, South 38, East 38 and North 31.
