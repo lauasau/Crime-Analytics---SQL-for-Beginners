@@ -112,4 +112,21 @@ ORDER BY incident_id;
 
 Swap ```TOP 5``` and the column list for ```COUNT(*)``` and the same filter shows there are 18 burglaries in the data. Spelling and spaces must match; capitals usually do not matter in SQL Server's default setup.
 
+## Combine conditions with AND, OR and parentheses
+```AND``` requires both conditions. ```OR``` requires either one.
+```SQL
+SELECT incident_id, report_date, offense_type
+FROM incidents
+WHERE district = 'North'
+  AND weapon_involved = 1;
+```
+This returns 6 incidents; the first rows are:
+| incident_id | report_date | offense_type |
+| --- | --- | --- |
+| 20 | 2025-03-25 | Weapons Violation |
+| 124 | 2025-07-22 | Weapons Violation |
+| 125 | 2025-05-11 | Simple Assault |
+| 139 | 2025-10-11 | Weapons Violation |
+| 161 | 2025-08-18 | Larceny |
 
+When you mix ```AND``` with ```OR```, add parentheses so SQL does what you mean. ```WHERE``` district = 'North' AND (offense_type = 'Robbery' OR offense_type = 'Burglary')``` is a different question from the same line without the parentheses.
