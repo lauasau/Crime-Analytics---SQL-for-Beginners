@@ -143,3 +143,4 @@ is a different question from the same line without the parentheses.
 | ```LIKE`` | Matches a text pattern; ```%``` means any characters | ```WHERE offense_type LIKE '%Assault%``` | 36 |
 | ```!=``` or ```<>``` | Not equal | ```WHERE status != 'Open'``` | |
 
+The ```BETWEEN``` example is the summer 2025 incidents. In the practice database ```report_date``` is a ```DATE``` column; write date values as ```'YYYY-MM-DD'``` and SQL Server reads them correctly.
