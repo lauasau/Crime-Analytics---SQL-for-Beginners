@@ -1,4 +1,4 @@
-# :computer: SQL for Beginners - Crime Analytics
+# :computer: Crime Analytics - SQL for Beginners
 ## :globe_with_meridians: Set up your practice database
 SQL (Structured Query Language) is how crime analysts ask questions about a database and this guide teaches users how to use SQL to analyze a fictional offender and incident-report data. 
 This guide includes six mini lessons, then practice problems with an answer key. Every query below was run against the fictional database and the results shown are the real output.
@@ -113,7 +113,7 @@ ORDER BY incident_id;
 Swap ```TOP 5``` and the column list for ```COUNT(*)``` and the same filter shows there are 18 burglaries in the data. Spelling and spaces must match; capitals usually do not matter in SQL Server's default setup.
 
 ## Combine conditions with AND, OR and parentheses
-```AND``` requires both conditions. ```OR``` requires either one.
+```AND``` requires all conditions to be true for a record to be included. ```OR``` requires at least one condition to be true.
 ```SQL
 SELECT incident_id, report_date, offense_type
 FROM incidents
@@ -129,4 +129,8 @@ This returns 6 incidents; the first rows are:
 | 139 | 2025-10-11 | Weapons Violation |
 | 161 | 2025-08-18 | Larceny |
 
-When you mix ```AND``` with ```OR```, add parentheses so SQL does what you mean. ```WHERE``` district = 'North' AND (offense_type = 'Robbery' OR offense_type = 'Burglary')``` is a different question from the same line without the parentheses.
+When you mix ```AND``` with ```OR```, SQL evaluates ```AND``` beore ```OR```. Always use parentheses to explicitly group your conditions so the database executes your intended logic:
+```sql
+WHERE district = 'North' AND (offense_type = 'Robbery' OR offense_type = 'Burglary')
+```
+is a different question from the same line without the parentheses.
