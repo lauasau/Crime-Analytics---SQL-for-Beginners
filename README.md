@@ -161,4 +161,20 @@ This returns 8 offenders who were never assigned a risk level, such as Reyes (id
 # :file_cabinet: Lesson 3:
 # ```ORDER BY``` and ```TOP``` - Ranking your results
 ```ORDER BY``` sorts your query results and ```TOP``` limits the number of rows returned, which together answer, "who has the most?" or "what happened most recently?" Together, they let you retrieve the highest, lowest, or most recent records from a table. 
+```sql
+SELECT TOP 5 offender_id, first_name, last_name,
+       supervision_type, prior_convictions
+FROM offenders
+ORDER BY prior_convictions DESC, last_name ASC;
+```
+| offender_id | first_name | last_name | supervision_type | prior_convictions |
+| --- | --- | --- | --- | --- |
+| 49 | Kevin | Ibarra | Parole | 7 |
+| 12 | Omar | Quinn | Parole | 7 |
+| 14 | Aaron | Young | Parole | 7 |
+| 38 | Quentin | Alvarez | Probation | 6 |
+| 29 | Aaron | Mason | None | 6 |
 
+- ```DESC``` sorts high to low; ```ASC``` (the default) sorts low to high.
+- Add a second column after a comma to break ties. Three offenders tie at 7 priors, so ```last_name``` puts them in alphabetical order.
+- Sorting dates newest first (```ORDER BY report_date DESC```) is the quickest way to see the latest incidents. 
