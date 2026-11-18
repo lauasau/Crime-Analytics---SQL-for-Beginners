@@ -204,7 +204,7 @@ FROM incidents;
 The result is one row: ```200```.
 
 ## ```GROUP BY```: One result per category
-```GROUP BY```` splits the rows into groups and runs the aggregate on each group. This is the "incidents by offense type" table every analyst builds.
+```GROUP BY``` splits the rows into groups and runs the aggregate on each group. This is the "incidents by offense type" table every analyst builds.
 ```SQL
 SELECT offense_type, COUNT(*) AS incident_count
 FROM incidents
